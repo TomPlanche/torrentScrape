@@ -7,7 +7,7 @@ options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,3000")
 
-driverPath = "/Users/tom_planche/Desktop/Prog/Python/chromedriver"
+driverPath = "path_to/chromedriver"
 
 driver = webdriver.Chrome(driverPath, options = options)
 
@@ -33,8 +33,8 @@ for article in liens_articles:
     description_article = soupe_article.find('section', class_ = 'post_content clearfix').find('p').text
 
     print(f"{titre_article}\n"
-          f"Posté le {date_article} et a pour catégories {categorie_article}\n"
+          f"Post on {date_article} in categories : {categorie_article}\n"
           f"{description_article}\n"
-          f"Taille : {taille_article}\n"
-          f"lien : {article}")
+          f"File size : {taille_article}\n"
+          f"Link : {article}")
     print()
